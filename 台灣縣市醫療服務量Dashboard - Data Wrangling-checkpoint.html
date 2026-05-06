@@ -8651,7 +8651,7 @@ Dashboard 做完後發現其實用 Tableau 裡的"關係(Relationships)"直接�
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>原本的<strong>醫事機構服務量統計年報</strong>資料是分成的<code>df_barchart</code>、<code>df_dotchart</code>和其他的<code>df_sheet--</code>多個工作表，再去 Tableau 中用 Relationships 把各個工作表合在一起，但因為工作表太多所以 Relationships 太多導致 Dashboard 很卡，篩選資料最久可以 Lag 超過3秒，於是我去調整了 Relationships 的效能選項，結果重新開啟檔案的後開始報錯，檢查了一下發現主要是各個 toggle switch 在報錯，原因是我 toggle switch 的條件敘述原本是用 string 做判斷，結果突然全部報錯，所以決定修 bug 順便回 python 重新整理資料調整 Tableau 的資料結構，把 Tableau 中的資料表減到最少，調整完後 Lag 可以減少至2秒內。</p>
+<p>原本的<strong>醫事機構服務量統計年報</strong>資料是分成的<code>df_barchart</code>、<code>df_dotchart</code>和其他的<code>df_sheet--</code>多個工作表，再去 Tableau 中用 Relationships 把各個工作表合在一起，但因為工作表太多所以 Relationships 太多導致 Dashboard 很卡，篩選資料最久可以 Lag 超過3秒，於是我去調整了 Relationships 的效能選項，結果重新開啟檔案後開始報錯，檢查了一下發現主要是各個 toggle switch 在報錯，原因是我 toggle switch 的條件敘述原本是用 string 做判斷，結果突然全部報錯，所以決定修 bug 順便回 python 重新整理資料調整 Tableau 的資料結構，把 Tableau 中的資料表減到最少，調整完後 Lag 可以減少至2秒內。</p>
 </div>
 </div>
 </div>
